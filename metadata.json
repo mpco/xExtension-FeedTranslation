@@ -1,0 +1,8 @@
+{
+	"name": "Feed Translation",
+	"author": "mpco",
+	"description": "Translate feed entry title to Chinese",
+	"version": 1.0,
+	"entrypoint": "FeedTranslation",
+	"type": "user"
+}

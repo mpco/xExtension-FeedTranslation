@@ -1,0 +1,29 @@
+<form action="<?php echo _url('extension', 'configure', 'e', urlencode($this->getName())); ?>" method="post">
+	<input type="hidden" name="_csrf" value="<?php echo FreshRSS_Auth::csrfToken(); ?>" />
+	
+	<div class="form-group">
+		<label class="group-name" for="ft_engine"><?php echo _t('ext.feed_translation.translation_engine'); ?></label>
+		<div class="group-controls">
+			<select name="ft_engine" id="ft_engine">
+				<!-- <option value="<?php echo htmlentities(FreshRSS_Context::$user_conf->ft_engine); ?>" selected="selected"><?php echo htmlentities(FreshRSS_Context::$user_conf->ft_engine); ?></option> -->
+				<option value="YouDao">YouDao</option>
+				<option value="Google">Google(Not implemented)</option>
+				<option value="Bing">Bing(Not implemented)</option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="group-name" for="ft_match_feed_urls"><?php echo _t('ext.feed_translation.feed_urls'); ?></label>
+		<div class="group-controls">
+			<textarea name="ft_match_feed_urls" id="ft_match_feed_urls"><?php echo FreshRSS_Context::$user_conf->ft_match_feed_urls; ?></textarea>
+		</div>
+	</div>
+
+	<div class="form-group form-actions">
+		<div class="group-controls">
+			<button type="submit" class="btn btn-important"><?php echo _t('gen.action.submit'); ?></button>
+			<button type="reset" class="btn"><?php echo _t('gen.action.cancel'); ?></button>
+		</div>
+	</div>
+</form>
